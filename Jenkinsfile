@@ -1,7 +1,7 @@
-pipeline{
-    stages{
-        stage{
-            steps{
+pipeline {
+    stages {
+        stage ('Just Test') {
+            steps {
                 sh 'echo Deu certo!'
             }
         }
