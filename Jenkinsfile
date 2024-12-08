@@ -28,8 +28,10 @@ pipeline {
         }
         stage ('Deploy Backend') {
             steps {
-               git url: 'https://github.com/edimichaellima/tasks-api-test'
-               sh 'mvn test'
+                dir('api-test'){
+                    git url: 'https://github.com/edimichaellima/tasks-api-test'
+                    sh 'mvn test'
+                }
             }
         }
     }
