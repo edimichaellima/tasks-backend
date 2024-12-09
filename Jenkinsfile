@@ -43,6 +43,14 @@ pipeline {
                 }
             }
         }
+        stage ('Functional Test') {
+            steps {
+                dir('functional-test'){
+                    git url: 'https://github.com/edimichaellima/tasks-functional-tests'
+                    sh 'mvn test'
+                }
+            }
+        }
     }
 }
 
